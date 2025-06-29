@@ -19,6 +19,19 @@ const nextConfig = {
     }
     return config;
   },
+  // Turbopack configuration (stable API)
+  turbopack: {
+    rules: {
+      '*.ts': {
+        loaders: ['@next/swc-loader'],
+        as: '*.js',
+      },
+      '*.tsx': {
+        loaders: ['@next/swc-loader'],
+        as: '*.js',
+      },
+    },
+  },
   // Node.js deprecation warnings are handled via package.json scripts
 };
 
