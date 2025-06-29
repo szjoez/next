@@ -59,14 +59,19 @@ Copy the `.env.example` files to `.env`. These values are unlikely to change, so
    ```
 
 ### Running the Database
+
+
 Use Docker to run the database to avoid local installation issues. Build and start the database container:
    ```bash
    docker compose build db
    docker compose up -d db
    ```
+
 Run the following command to apply database migrations:
+
+
    ```bash
-   make docker-migrate-db
+   cd fastapi_backend && DATABASE_URL="postgresql+asyncpg://postgres:password@localhost:5432/mydatabase" python -m alembic upgrade head
    ```
 
 ### Build the project (without Docker):
@@ -84,7 +89,10 @@ Navigate to the `nextjs-frontend` directory and run:
    ```bash
    pnpm install
    ```
-
+   如果pnpm install失败，可以使用npm
+   ```bash
+   npm install
+   ```
 ### Build the project (with Docker):
 
 Build the backend and frontend containers:
