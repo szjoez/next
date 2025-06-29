@@ -19,6 +19,7 @@ const nextConfig = {
     }
     return config;
   },
+  // Node.js deprecation warnings are handled via package.json scripts
 };
 
 export default nextConfig;

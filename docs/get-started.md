@@ -69,7 +69,6 @@ Use Docker to run the database to avoid local installation issues. Build and sta
 
 Run the following command to apply database migrations:
 
-
    ```bash
    cd fastapi_backend && DATABASE_URL="postgresql+asyncpg://postgres:password@localhost:5432/mydatabase" python -m alembic upgrade head
    ```
